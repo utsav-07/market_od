@@ -15,8 +15,8 @@ export default function Shop() {
 
 
     return (
-        <div className='MainShopContainer d-flex justify-content-center align-content-center'>
-            <div className='d-flex bg-white  row overflow-scroll' style={{ width: '80vw', height: '300px', padding: '25px' }}>
+        <div className='MainShopContainer  d-flex justify-content-center align-content-center'>
+            <div className='xoverFlow shadow d-flex bg-white  row overflow-scroll' style={{ width: '80vw', height: '300px', padding: '25px'  }}>
                 
                 {/* <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="..." alt="Card image cap"/>

@@ -15,6 +15,9 @@ import ButtonContainer from '../../Components/Buttons/ButtonContainer';
 
 export default function ShoppingCategory() {
 
+
+    const [search, setSearch] = React.useState("");
+
     const [count, setCount] = React.useState([
         {
             sl_no: 1,
@@ -34,6 +37,13 @@ export default function ShoppingCategory() {
     ]);
 
 
+    const handleSearch = (e) => {
+
+        console.log(e.target.value)
+        setSearch(e.target.value)
+    }
+
+
     const [shops, setShops] = React.useState([]);
 
 
@@ -44,11 +54,11 @@ export default function ShoppingCategory() {
     console.log(window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1))
     return (
         <div className='MainShopContainer d-flex justify-content-center align-content-center'>
-            <div className='m-25 bg-white  row overflow-scroll' style={{ width: '80vw', height: '350px', padding: '25px' }}>
+            <div className='xoverFlow shadow m-25 bg-white  row overflow-scroll' style={{ width: '80vw', height: '350px', padding: '25px' , overflowX : 'hidden !important'}}>
                 <div style={{ height: '10px', width: '300px' }}>
 
                     <div class="input-group " >
-                        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                        <input type="search" onChange={handleSearch} class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
                         <button type="button" class="btn btn-outline-primary">search</button>
                     </div>
                 </div>
@@ -97,6 +107,16 @@ export default function ShoppingCategory() {
                     if (window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1) === data.shops) {
                         return data
                     }
+                }).filter((data) => {
+
+                    if (search === '') {
+                        return data
+                    } else {
+                        if (data.shopName.toLowerCase().includes(search.toLowerCase())) {
+                            return data
+                        }
+                    } 
+
                 }).map((item, index) => {
 
                     console.log(item.items)

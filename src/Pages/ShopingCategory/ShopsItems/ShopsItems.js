@@ -45,7 +45,7 @@ export default function ShopsItems(props) {
 
       return (
         <div className='MainShopContainer d-flex justify-content-center align-content-center'>
-            <div className='m-25 bg-white  row overflow-scroll' style={{ width: '80vw', height: '350px', padding: '25px' }}>
+            <div className='xoverFlow   shadow m-25 bg-white  row overflow-scroll' style={{ width: '80vw', height: '350px', padding: '25px' }}>
                 <div style={{ height: '10px', width: '300px' }}>
 
                     <div class="input-group " >

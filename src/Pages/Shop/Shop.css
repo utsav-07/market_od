@@ -2,3 +2,6 @@
     margin-top: 140px;
 }
 
+.xoverFlow{
+    overflow-x: hidden !important;
+}

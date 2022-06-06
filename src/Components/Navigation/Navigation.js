@@ -9,7 +9,7 @@ export const Navigation = () => {
         <>
 
 
-            <nav className="navbar navbar-light bg-light fixed-top">
+            <nav className="shadow navbar navbar-light bg-light fixed-top">
                 <div className="container-fluid">
                     <div className='d-flex justify-content-between  my-2'>
 
