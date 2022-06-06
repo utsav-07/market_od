@@ -1,20 +1,29 @@
-import React, { useEffect } from 'react'
+import React , {useEffect} from 'react'
+import ButtonContainer from '../../../Components/Buttons/ButtonContainer';
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Link, useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom'
 
 import { Navigation } from "swiper";
 
-import './ShoppingCategory.css'
-import { Link } from 'react-router-dom';
-import { ShoppingCategoryContent } from './ShoppingCategoryContent';
-import ButtonContainer from '../../Components/Buttons/ButtonContainer';
+export default function ShopsItems(props) {
 
 
-export default function ShoppingCategory() {
+    let location = useLocation()
 
+    console.log(location.state.shopItem)
+
+
+    const[ShopItems , setShopItems] = React.useState([]);
+
+    useEffect(() => {
+        setShopItems(location.state.shopItem)
+    }, [])
+    
     const [count, setCount] = React.useState([
         {
             sl_no: 1,
@@ -34,15 +43,7 @@ export default function ShoppingCategory() {
     ]);
 
 
-    const [shops, setShops] = React.useState([]);
-
-
-    useEffect(() => {
-        setShops(ShoppingCategoryContent)
-    }, [])
-
-    console.log(window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1))
-    return (
+      return (
         <div className='MainShopContainer d-flex justify-content-center align-content-center'>
             <div className='m-25 bg-white  row overflow-scroll' style={{ width: '80vw', height: '350px', padding: '25px' }}>
                 <div style={{ height: '10px', width: '300px' }}>
@@ -77,9 +78,8 @@ export default function ShoppingCategory() {
 
 
                         {count.map((item, index) => {
-                            console.log(item.sl_no)
                             return (
-                                <SwiperSlide>
+                                <SwiperSlide key={index}>
                                     <span class="fa-stack" style={{ verticalAlign: 'top' }}>
                                         <i class="fa-regular fa-circle fa-stack-2x"></i>
                                         <i class="fa-solid fa-flag fa-stack-1x"></i>
@@ -93,13 +93,7 @@ export default function ShoppingCategory() {
 
 
 
-                {shops.filter((data) => {
-                    if (window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1) === data.shops) {
-                        return data
-                    }
-                }).map((item, index) => {
-
-                    console.log(item.items)
+                {ShopItems.map((item, index) => {
                     return (
 
 
@@ -109,21 +103,16 @@ export default function ShoppingCategory() {
 
                                 <div className='d-flex flex-column mt-2 align-items-center'>
 
-                                    <span>{item.shopName}</span>
-                            <Link to=
-                                { '/shopinCategory/' + item.shops + '/' + item.shopName}
-                                 state = {{
-                                    shopItem : item.items
-                                }}
-                                    
-                        
-
-                
+                                    <span>{item.itemName}</span>
+                                    <span>{item.itemPrice}</span>
+                            <Link to={{
+                            
+                            }}
                                 style={{
                                     textDecoration: 'none'
                                 }} >
                                     <div className="card-body">
-                                        <ButtonContainer  className='btn btn-primary btn-block' text='Shop' />
+                                        <ButtonContainer  className='btn btn-primary btn-block' text='Add To Cart' />
                                     </div>
                             </Link>
                                 </div>
@@ -137,4 +126,5 @@ export default function ShoppingCategory() {
 
         </div>
     )
+  
 }
