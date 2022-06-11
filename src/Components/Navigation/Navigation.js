@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import ButtonContainer from  '../Buttons/ButtonContainer'
+import ButtonContainer from '../Buttons/ButtonContainer'
 
 
 export const Navigation = () => {
@@ -21,10 +21,10 @@ export const Navigation = () => {
                     <div className='d-flex'>
                         <div className='me-3'>
                             <a href='/Login'>
-                                <ButtonContainer class='btn btn-outline-primary btn-sm' text = 'Log In'></ButtonContainer>
+                                <ButtonContainer class='btn btn-outline-primary btn-sm' text='Log In'></ButtonContainer>
                             </a>
                         </div>
-                        <ButtonContainer class='btn btn-outline-primary btn-sm' text = 'Be A Partner'></ButtonContainer>
+                        <ButtonContainer class='btn btn-outline-primary btn-sm' text='Be A Partner'></ButtonContainer>
                     </div>
 
                     <div className="offcanvas offcanvas-start w-25" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
@@ -40,7 +40,10 @@ export const Navigation = () => {
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/shop">Shop</Link>
                                 </li>
-                   
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/cart">Your Cart</Link>
+                                </li>
+
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/services">Services</Link>
                                 </li>
@@ -50,7 +53,7 @@ export const Navigation = () => {
                                 <li className="nav-item">
                                     <Link className="nav-link" to="/shopByProd">Appointment</Link>
                                 </li>
-                                
+
 
                                 {/* <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" href="https://www.google.com" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
