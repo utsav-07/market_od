@@ -1,13 +1,18 @@
 {
   "files": {
-    "main.css": "/market_od/static/css/main.2b6dc0f0.css",
-    "main.js": "/market_od/static/js/main.0b4ec3e1.js",
+    "main.css": "/market_od/static/css/main.6789b71c.css",
+    "main.js": "/market_od/static/js/main.48703ee5.js",
+    "static/media/booking.png": "/market_od/static/media/booking.ed9144698da09c281822.png",
+    "static/media/eateries.png": "/market_od/static/media/eateries.73e6844320c41b83e47f.png",
+    "static/media/services1.png": "/market_od/static/media/services1.0fce7fa2722d25cff045.png",
+    "static/media/appointment.png": "/market_od/static/media/appointment.8500b362829003367004.png",
+    "static/media/shops.png": "/market_od/static/media/shops.52b368f53dcde6457825.png",
     "index.html": "/market_od/index.html",
-    "main.2b6dc0f0.css.map": "/market_od/static/css/main.2b6dc0f0.css.map",
-    "main.0b4ec3e1.js.map": "/market_od/static/js/main.0b4ec3e1.js.map"
+    "main.6789b71c.css.map": "/market_od/static/css/main.6789b71c.css.map",
+    "main.48703ee5.js.map": "/market_od/static/js/main.48703ee5.js.map"
   },
   "entrypoints": [
-    "static/css/main.2b6dc0f0.css",
-    "static/js/main.0b4ec3e1.js"
+    "static/css/main.6789b71c.css",
+    "static/js/main.48703ee5.js"
   ]
 }
