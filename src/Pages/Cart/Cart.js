@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
 
+import  './Cart.css';
+
 
 
 const CartProduct = [
@@ -23,6 +25,8 @@ const CartProduct = [
 ];
 
 export default function Cart() {
+
+
 
     const [cart, setCart] = React.useState([]);
     const [update, setUpdate] = React.useState(false);
@@ -147,7 +151,7 @@ export default function Cart() {
                             </div>
 
                             <div class=" card">
-                                <div className='d-flex flex-row justify-content-evenly '>
+                                <div className='buttonSection'>
                                     <Link to='/'>
 
                                         <div class="card-body">

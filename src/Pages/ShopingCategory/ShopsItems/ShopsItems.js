@@ -1,4 +1,4 @@
-import React , {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import ButtonContainer from '../../../Components/Buttons/ButtonContainer';
 import "swiper/css";
 import "swiper/css/pagination";
@@ -18,12 +18,15 @@ export default function ShopsItems(props) {
     console.log(location.state.shopItem)
 
 
-    const[ShopItems , setShopItems] = React.useState([]);
+    const [ShopItems, setShopItems] = React.useState([]);
 
     useEffect(() => {
         setShopItems(location.state.shopItem)
     }, [])
-    
+
+
+  //console.log(window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 0))
+
     const [count, setCount] = React.useState([
         {
             sl_no: 1,
@@ -43,7 +46,7 @@ export default function ShopsItems(props) {
     ]);
 
 
-      return (
+    return (
         <div className='MainShopContainer d-flex justify-content-center align-content-center'>
             <div className='xoverFlow   shadow m-25 bg-white  row overflow-scroll' style={{ width: '80vw', height: '350px', padding: '25px' }}>
                 <div style={{ height: '10px', width: '300px' }}>
@@ -101,21 +104,23 @@ export default function ShopsItems(props) {
                         <div key={index} className="card m-3" style={{ width: '200px', height: '150px' }}>
 
 
-                                <div className='d-flex flex-column mt-2 align-items-center'>
+                            <div className='d-flex flex-column mt-2 align-items-center'>
 
+                                <Link to=
+                                    {'/productDetail'}
+                                    state={{
+                                        shopItem: item.items
+                                    }}
+                                    style={{
+                                        textDecoration: 'none'
+                                    }} >
                                     <span>{item.itemName}</span>
-                                    <span>{item.itemPrice}</span>
-                            <Link to={{
-                            
-                            }}
-                                style={{
-                                    textDecoration: 'none'
-                                }} >
-                                    <div className="card-body">
-                                        <ButtonContainer  className='btn btn-primary btn-block' text='Add To Cart' />
-                                    </div>
-                            </Link>
+                                </Link>
+                                <span>{item.itemPrice}</span>
+                                <div className="card-body">
+                                    <ButtonContainer className='btn btn-primary btn-block' text='Add To Cart' />
                                 </div>
+                            </div>
                         </div>
                     )
                 }
@@ -126,5 +131,5 @@ export default function ShopsItems(props) {
 
         </div>
     )
-  
+
 }

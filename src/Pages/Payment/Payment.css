@@ -1,0 +1,11 @@
+@media screen and (max-width : 800px) {
+    .paymetnContainer{
+        flex-direction:  column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cardDetails{
+        margin : 20px 0px;
+    }
+}

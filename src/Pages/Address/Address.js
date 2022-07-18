@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Address() {
 
@@ -31,10 +31,10 @@ export default function Address() {
                         <div class="col-md-4 mb-4 position-static">
                             <div class="card mb-4">
                                 <div class="card-header py-3">
-                                    <h5 class="mb-0 text-font">{finalCart.length} item 
-                                    {/* <span class="float-end mt-1"
+                                    <h5 class="mb-0 text-font">{finalCart.length} item
+                                        {/* <span class="float-end mt-1"
                                         style={{ fontSize: '13px' }}>Edit</span> */}
-                                        </h5>
+                                    </h5>
                                 </div>
                                 <div class="card-body ">
                                     {finalCart.map((item, index) => {
@@ -141,8 +141,22 @@ export default function Address() {
                                 </div>
 
                             </div>
-                            <div class="text-center">
-                                <button type="button" class="btn button-order col-md-10">Place order</button>
+                            <div class=" card">
+                                <div className='d-flex flex-row justify-content-evenly '>
+                                    <Link to={'/cart/AddressSection/Payement'}
+                                        state={{
+                                            cartDetail: finalCart,
+                                        }}
+                                    >
+
+                                        <div class="card-body">
+                                            <button style={{  alignItems : 'center' }} type="button" class="btn btn-warning btn-block btn-lg">CHECKOUT</button>
+                                        </div>
+                                    </Link>
+
+                               
+                                </div>
+
                             </div>
 
                         </div>

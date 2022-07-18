@@ -51,7 +51,7 @@ export default function ShoppingCategory() {
         setShops(ShoppingCategoryContent)
     }, [])
 
-    console.log(window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1))
+   // console.log(window.location.pathname.substring(window.location.pathname.lastIndexOf('/') + 1))
     return (
         <div className='MainShopContainer d-flex justify-content-center align-content-center'>
             <div className='xoverFlow shadow m-25 bg-white  row overflow-scroll' style={{ width: '80vw', height: '350px', padding: '25px' , overflowX : 'hidden !important'}}>
@@ -87,7 +87,7 @@ export default function ShoppingCategory() {
 
 
                         {count.map((item, index) => {
-                            console.log(item.sl_no)
+                           // console.log(item.sl_no)
                             return (
                                 <SwiperSlide>
                                     <span class="fa-stack" style={{ verticalAlign: 'top' }}>
@@ -133,7 +133,7 @@ export default function ShoppingCategory() {
                             <Link to=
                                 { '/shopinCategory/' + item.shops + '/' + item.shopName}
                                  state = {{
-                                    shopItem : item.items
+                                    shopItem : item.items   
                                 }}
                                     
                         
